@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "c6cfa06b-7933-4c45-a5d3-b985f6ca3fb7",
+		"name": "Reward coins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21014024"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sing-Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/auth/sing-up",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"auth",
+								"sing-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sing-In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/auth/sing-in",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"auth",
+								"sing-in"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/user/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/user/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"user",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/user/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"user",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/user/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"user",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/user/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"user",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Balance",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/balance/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"balance",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/balance/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"balance",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/balance/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"balance",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/balance/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"balance",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/balance/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"balance",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coin Type",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/coin-type/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"coin-type",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/coin-type/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"coin-type",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/coin-type/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"coin-type",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/coin-type/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"coin-type",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/coin-type/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"coin-type",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Type",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction-type/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction-type",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction-type/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction-type",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction-type/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction-type",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction-type/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction-type",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction-type/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction-type",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/transaction/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"transaction",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exchange Rate",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/exchange-rate/create",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"exchange-rate",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/product/get/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"product",
+								"get",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/product/list/{{offset}}/{{limit}}/?name=ivanov",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"product",
+								"list",
+								"{{offset}}",
+								"{{limit}}",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivanov"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/product/update/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reward_coin_url}}/product/delete/{{id}}",
+							"host": [
+								"{{reward_coin_url}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
