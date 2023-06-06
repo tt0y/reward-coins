@@ -3,13 +3,13 @@ module reward-coins-api
 go 1.20
 
 require (
+	github.com/go-sql-driver/mysql v1.7.1
 	github.com/gofiber/fiber v1.14.6
 	github.com/joho/godotenv v1.5.1
 )
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
-	github.com/go-sql-driver/mysql v1.7.1 // indirect
 	github.com/gofiber/utils v0.0.10 // indirect
 	github.com/gorilla/schema v1.1.0 // indirect
 	github.com/klauspost/compress v1.15.0 // indirect
