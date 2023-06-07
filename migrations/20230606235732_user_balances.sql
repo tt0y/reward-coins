@@ -6,6 +6,7 @@ CREATE TABLE user_balances
     user_id      int,
     coin_type_id int,
     amount       int,
+    updated_at   timestamp,
     PRIMARY KEY (id),
     FOREIGN KEY (coin_type_id) REFERENCES coin_types (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
