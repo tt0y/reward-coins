@@ -7,6 +7,10 @@ CREATE TABLE products
     cost         int,
     coin_type_id int,
     active       boolean,
+    pictures     json,
+    created_at   timestamp,
+    updated_at   timestamp,
+    deleted_at   timestamp,
     PRIMARY KEY (id),
     FOREIGN KEY (coin_type_id) REFERENCES coin_types (id)
 );
