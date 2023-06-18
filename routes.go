@@ -6,10 +6,10 @@ import (
 )
 
 func startListening(app *fiber.App) {
+	app.Get("/__health", healthCheck)
+
 	err := app.Listen(ApplicationPort)
 	if err != nil {
 		log.Fatalf("Error starting the app")
 	}
-
-	app.Get("/__health", healthCheck)
 }
