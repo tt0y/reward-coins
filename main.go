@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
@@ -14,6 +14,11 @@ import (
 func main() {
 	app := fiber.New()
 	db := getDb()
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Welcome to Go Fiber API")
+	})
+
 	startListening(app)
 
 	defer func(db *sql.DB) {
@@ -45,10 +50,6 @@ func getDb() *sql.DB {
 	}
 
 	return db
-}
-
-func healthCheck(c *fiber.Ctx) {
-	c.Send("status: ok")
 }
 
 // use godot package to load/read the .env file and return the value of the key
