@@ -2,7 +2,7 @@
 -- +goose StatementBegin
 CREATE TABLE users
 (
-    id           int NOT NULL,
+    id           bigint unsigned auto_increment primary key,
     name         varchar(255),
     email        varchar(255),
     phone        varchar(30),
@@ -11,11 +11,10 @@ CREATE TABLE users
     activated_at timestamp,
     blocked_at   timestamp,
     blocked_to   timestamp,
-    created_at   timestamp,
-    updated_at   timestamp,
-    deleted_at   timestamp,
-    PRIMARY KEY (id)
-);
+    created_at   timestamp default CURRENT_TIMESTAMP,
+    updated_at   timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    deleted_at   timestamp null default null
+) charset = utf8;
 -- +goose StatementEnd
 
 -- +goose Down

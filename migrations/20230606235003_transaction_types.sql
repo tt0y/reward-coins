@@ -2,13 +2,12 @@
 -- +goose StatementBegin
 CREATE TABLE transaction_types
 (
-    id          int NOT NULL,
-    name        VARCHAR(20),
-    created_at  timestamp,
-    updated_at  timestamp,
-    deleted_at  timestamp,
-    PRIMARY KEY (id)
-);
+    id         bigint unsigned auto_increment primary key,
+    name       VARCHAR(20),
+    created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    deleted_at timestamp null default null
+) charset = utf8;
 -- +goose StatementEnd
 
 -- +goose Down

@@ -2,14 +2,12 @@
 -- +goose StatementBegin
 CREATE TABLE products
 (
-    id           int NOT NULL,
+    id           bigint unsigned auto_increment primary key,
     name         VARCHAR(255),
     cost         int,
     coin_type_id int,
-    active       boolean,
-    PRIMARY KEY (id),
-    FOREIGN KEY (coin_type_id) REFERENCES coin_types (id)
-);
+    active       boolean default true
+) charset = utf8;
 -- +goose StatementEnd
 
 -- +goose Down
