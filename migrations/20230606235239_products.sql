@@ -3,7 +3,8 @@
 CREATE TABLE products
 (
     id           bigint unsigned auto_increment primary key,
-    name         VARCHAR(255),
+    name         VARCHAR(60),
+    description  VARCHAR(255),
     cost         int,
     coin_type_id int,
     active       boolean default true
