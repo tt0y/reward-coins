@@ -28,4 +28,11 @@ func SetupRoutes(app *fiber.App) {
 	app.Post("/api/v1/coin-type", handlers.AddCoinType)
 	app.Put("/api/v1/coin-type/:id", handlers.UpdateCoinType)
 	app.Delete("/api/v1/coin-type/:id", handlers.RemoveCoinType)
+
+	// exchange-rate api
+	app.Get("/api/v1/exchange-rate", handlers.ListExchangeRates)
+	app.Get("/api/v1/exchange-rate/:id", handlers.GetExchangeRate)
+	app.Post("/api/v1/exchange-rate", handlers.AddExchangeRate)
+	app.Put("/api/v1/exchange-rate/:id", handlers.UpdateExchangeRate)
+	app.Delete("/api/v1/exchange-rate/:id", handlers.RemoveExchangeRate)
 }
