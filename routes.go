@@ -16,9 +16,16 @@ func SetupRoutes(app *fiber.App) {
 	})
 
 	// transaction-type api
-	app.Get("/api/v1/transaction-types", handlers.ListTransactionTypes)
-	app.Get("/api/v1/transaction-types/:id", handlers.GetTransactionType)
-	app.Post("/api/v1/transaction-types", handlers.AddTransactionType)
-	app.Put("/api/v1/transaction-types/:id", handlers.UpdateTransactionType)
-	app.Delete("/api/v1/transaction-types/:id", handlers.RemoveTransactionType)
+	app.Get("/api/v1/transaction-type", handlers.ListTransactionTypes)
+	app.Get("/api/v1/transaction-type/:id", handlers.GetTransactionType)
+	app.Post("/api/v1/transaction-type", handlers.AddTransactionType)
+	app.Put("/api/v1/transaction-type/:id", handlers.UpdateTransactionType)
+	app.Delete("/api/v1/transaction-type/:id", handlers.RemoveTransactionType)
+
+	// coin-type api
+	app.Get("/api/v1/coin-type", handlers.ListCoinTypes)
+	app.Get("/api/v1/coin-type/:id", handlers.GetCoinType)
+	app.Post("/api/v1/coin-type", handlers.AddCoinType)
+	app.Put("/api/v1/coin-type/:id", handlers.UpdateCoinType)
+	app.Delete("/api/v1/coin-type/:id", handlers.RemoveCoinType)
 }
