@@ -35,4 +35,11 @@ func SetupRoutes(app *fiber.App) {
 	app.Post("/api/v1/exchange-rate", handlers.AddExchangeRate)
 	app.Put("/api/v1/exchange-rate/:id", handlers.UpdateExchangeRate)
 	app.Delete("/api/v1/exchange-rate/:id", handlers.RemoveExchangeRate)
+
+	// user api
+	app.Get("/api/v1/user", handlers.ListUsers)
+	app.Get("/api/v1/user/:id", handlers.GetUser)
+	app.Post("/api/v1/user", handlers.AddUser)
+	app.Put("/api/v1/user/:id", handlers.UpdateUser)
+	app.Delete("/api/v1/user/:id", handlers.RemoveUser)
 }
