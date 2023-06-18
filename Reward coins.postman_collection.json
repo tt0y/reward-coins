@@ -55,14 +55,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Super Admin\", \"email\": \"sa@rc.com\", \"phone\": \"+77786373432\", \"is_admin\": false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/user/create",
+							"raw": "{{reward_coin_url}}/api/v1/user",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"user",
-								"create"
+								"api",
+								"v1",
+								"user"
 							]
 						}
 					},
@@ -74,14 +84,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/user/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/user/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"user",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -93,22 +104,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/user/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/user",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"user",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"user"
 							]
 						}
 					},
@@ -119,15 +122,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Super Admin\", \"email\": \"sa@rc.com\", \"phone\": \"+77786373432\", \"is_admin\": true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/user/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/user/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"user",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -139,14 +152,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/user/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/user/2",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"user",
-								"delete",
-								"{{id}}"
+								"2"
 							]
 						}
 					},
@@ -162,14 +176,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\": 1, \"coin_type_id\": 1, \"amount\": 100}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/balance/create",
+							"raw": "{{reward_coin_url}}/api/v1/balance",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"balance",
-								"create"
+								"api",
+								"v1",
+								"balance"
 							]
 						}
 					},
@@ -181,14 +205,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/balance/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/balance/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"balance",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -200,22 +225,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/balance/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/balance",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"balance",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"balance"
 							]
 						}
 					},
@@ -226,15 +243,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\": 1, \"coin_type_id\": 1, \"amount\": 1000}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/balance/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/balance/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"balance",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -246,14 +273,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/balance/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/balance/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"balance",
-								"delete",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -269,14 +297,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"red coin\", \"description\": \"red coin\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/coin-type/create",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"coin-type",
-								"create"
+								"api",
+								"v1",
+								"coin-type"
 							]
 						}
 					},
@@ -288,14 +326,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/coin-type/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"coin-type",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -307,22 +346,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/coin-type/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"coin-type",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"coin-type"
 							]
 						}
 					},
@@ -333,15 +364,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"red coin\", \"description\": \"base red coin\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/coin-type/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"coin-type",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -353,14 +394,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/coin-type/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"coin-type",
-								"delete",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -376,14 +418,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"transfer\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction-type/create",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-type",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction-type",
-								"create"
+								"api",
+								"v1",
+								"transaction-type"
 							]
 						}
 					},
@@ -395,14 +447,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction-type/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-type/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"transaction-type",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -414,22 +467,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction-type/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-type",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction-type",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"transaction-type"
 							]
 						}
 					},
@@ -440,15 +485,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"purchase\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction-type/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-types/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction-type",
-								"update",
-								"{{id}}"
+								"api",
+								"v1",
+								"transaction-types",
+								"1"
 							]
 						}
 					},
@@ -460,14 +515,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction-type/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-types/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction-type",
-								"delete",
-								"{{id}}"
+								"api",
+								"v1",
+								"transaction-types",
+								"1"
 							]
 						}
 					},
@@ -483,14 +539,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\": \"new\", \"transaction_type_id\": 1, \"coin_type_id\": 1, \"amount\": 10, \"user_id_from\": 1, \"product_id\": 1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction/create",
+							"raw": "{{reward_coin_url}}/api/v1/transaction",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction",
-								"create"
+								"api",
+								"v1",
+								"transaction"
 							]
 						}
 					},
@@ -502,14 +568,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"transaction",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -521,22 +588,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/transaction",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"transaction",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"transaction"
 							]
 						}
 					},
@@ -547,15 +606,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\": \"success\", \"transaction_type_id\": 1, \"coin_type_id\": 1, \"amount\": 10, \"user_id_from\": 1, \"product_id\": 1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"transaction",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -567,14 +636,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/transaction/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"transaction",
-								"delete",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -590,14 +660,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"coin_type_id_from\": 1, \"coin_type_id_to\": 2, \"rate\": 2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/create",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"exchange-rate",
-								"create"
+								"api",
+								"v1",
+								"exchange-rate"
 							]
 						}
 					},
@@ -609,14 +689,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"exchange-rate",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -628,22 +709,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"exchange-rate",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"exchange-rate"
 							]
 						}
 					},
@@ -654,15 +727,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"coin_type_id_from\": 1, \"coin_type_id_to\": 2, \"rate\": 3}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"exchange-rate",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -674,14 +757,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"exchange-rate",
-								"delete",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -697,14 +781,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Рюкзак Freedom Pay\", \"description\": \"Практичный городоской рюкзак\", \"cost\": 100, \"coin_type_id\": 1, \"images\": \"{\\\"img1\\\":\\\"cdn://img1.png\\\"}\", \"active\": false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/exchange-rate/create",
+							"raw": "{{reward_coin_url}}/api/v1/product",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"exchange-rate",
-								"create"
+								"api",
+								"v1",
+								"product"
 							]
 						}
 					},
@@ -716,14 +810,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/product/get/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/product/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"product",
-								"get",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -735,22 +830,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/product/list/{{offset}}/{{limit}}/?name=ivanov",
+							"raw": "{{reward_coin_url}}/api/v1/product",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
-								"product",
-								"list",
-								"{{offset}}",
-								"{{limit}}",
-								""
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "ivanov"
-								}
+								"api",
+								"v1",
+								"product"
 							]
 						}
 					},
@@ -761,15 +848,25 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Рюкзак Freedom Pay\", \"description\": \"Практичный городоской рюкзак\", \"cost\": 100, \"coin_type_id\": 1, \"images\": \"{\\\"img1\\\":\\\"cdn://img1.png\\\"}\", \"active\": true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{reward_coin_url}}/product/update/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/product/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"product",
-								"update",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
@@ -781,20 +878,38 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/product/delete/{{id}}",
+							"raw": "{{reward_coin_url}}/api/v1/product/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
 							"path": [
+								"api",
+								"v1",
 								"product",
-								"delete",
-								"{{id}}"
+								"1"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{reward_coin_url}}/__health",
+					"host": [
+						"{{reward_coin_url}}"
+					],
+					"path": [
+						"__health"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
