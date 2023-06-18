@@ -2,14 +2,11 @@
 -- +goose StatementBegin
 CREATE TABLE user_balances
 (
-    id           int NOT NULL,
+    id           bigint unsigned auto_increment primary key,
     user_id      int,
     coin_type_id int,
-    amount       int,
-    PRIMARY KEY (id),
-    FOREIGN KEY (coin_type_id) REFERENCES coin_types (id),
-    FOREIGN KEY (user_id) REFERENCES users (id)
-);
+    amount       int
+) charset = utf8;
 -- +goose StatementEnd
 
 -- +goose Down
