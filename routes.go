@@ -56,4 +56,12 @@ func SetupRoutes(app *fiber.App) {
 	app.Post("/api/v1/balance", handlers.AddUserBalance)
 	app.Put("/api/v1/balance/:id", handlers.UpdateUserBalance)
 	app.Delete("/api/v1/balance/:id", handlers.RemoveUserBalance)
+
+	// transaction api
+	app.Get("/api/v1/transaction", handlers.ListTransactions)
+	app.Get("/api/v1/transaction/:id", handlers.GetTransaction)
+	app.Post("/api/v1/transaction", handlers.AddTransaction)
+	app.Put("/api/v1/transaction/:id", handlers.UpdateTransaction)
+	app.Delete("/api/v1/transaction/:id", handlers.RemoveTransaction)
+
 }
