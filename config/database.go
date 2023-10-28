@@ -39,24 +39,10 @@ func Connect() error {
 		log.Fatal(err)
 	}
 
-	createTables()
-
 	return nil
 }
 
-func createTables() {
-	_, err := Database.Exec(`CREATE TABLE IF NOT EXISTS transaction_types (
-		id INT AUTO_INCREMENT PRIMARY KEY,
-		name VARCHAR(255),
-		created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-		updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-	);`)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
+// use godot package to load/read the .env file and return the value of the key
 func goDotEnvVariable(key string) string {
 	// load .env file
 	err := godotenv.Load(".env")
