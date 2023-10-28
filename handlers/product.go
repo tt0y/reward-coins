@@ -1,15 +1,36 @@
 package handlers
 
 import (
+	"database/sql"
+	"errors"
 	"github.com/gofiber/fiber/v2"
+	"log"
 	"reward-coins-api/config"
 	"reward-coins-api/models"
 )
 
 func ListProducts(c *fiber.Ctx) error {
-	var products []models.Product
+	rows, err := config.Database.Query("SELECT id, name, description, cost, coin_type_id, images, active FROM products")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}(rows)
 
-	config.Database.Find(&products)
+	var products []models.Product
+	for rows.Next() {
+		var product models.Product
+		err := rows.Scan(&product.ID, &product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
+		if err != nil {
+			log.Fatal(err)
+		}
+		products = append(products, product)
+	}
+
 	return c.Status(200).JSON(products)
 }
 
@@ -17,10 +38,12 @@ func GetProduct(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var product models.Product
 
-	result := config.Database.Find(&product, id)
-
-	if result.RowsAffected == 0 {
-		return c.SendStatus(404)
+	err := config.Database.QueryRow("SELECT id, name, description, cost, coin_type_id, images, active FROM products WHERE id = ?", id).Scan(&product.ID, &product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return c.SendStatus(404)
+		}
+		log.Fatal(err)
 	}
 
 	return c.Status(200).JSON(&product)
@@ -33,7 +56,12 @@ func AddProduct(c *fiber.Ctx) error {
 		return c.Status(503).SendString(err.Error())
 	}
 
-	config.Database.Create(&product)
+	_, err := config.Database.Exec("INSERT INTO products (name, description, cost, coin_type_id, images, active) VALUES (?, ?, ?, ?, ?, ?)",
+		product.Name, product.Description, product.Cost, product.CoinTypeId, product.Images, product.Active)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	return c.Status(201).JSON(product)
 }
 
@@ -45,18 +73,21 @@ func UpdateProduct(c *fiber.Ctx) error {
 		return c.Status(503).SendString(err.Error())
 	}
 
-	config.Database.Where("id = ?", id).Updates(&product)
+	_, err := config.Database.Exec("UPDATE products SET name = ?, description = ?, cost = ?, coin_type_id = ?, images = ?, active = ? WHERE id = ?",
+		product.Name, product.Description, product.Cost, product.CoinTypeId, product.Images, product.Active, id)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	return c.Status(200).JSON(product)
 }
 
 func RemoveProduct(c *fiber.Ctx) error {
 	id := c.Params("id")
-	var product models.Product
 
-	result := config.Database.Delete(&product, id)
-
-	if result.RowsAffected == 0 {
-		return c.SendStatus(404)
+	_, err := config.Database.Exec("DELETE FROM products WHERE id = ?", id)
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	return c.SendStatus(200)

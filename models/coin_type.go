@@ -1,9 +1,7 @@
 package models
 
-import "gorm.io/gorm"
-
 type CoinType struct {
-	gorm.Model
+	ID          uint   `json:"id"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
 }
