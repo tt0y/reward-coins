@@ -10,21 +10,21 @@ import (
 )
 
 func ListProducts(c *fiber.Ctx) error {
-	rows, err := config.Database.Query("SELECT name, description, cost, coin_type_id, images, active FROM products")
+	rows, err := config.Database.Query("SELECT id, name, description, cost, coin_type_id, images, active FROM products")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer func(rows *sql.Rows) {
 		err := rows.Close()
 		if err != nil {
-
+			log.Fatal(err)
 		}
 	}(rows)
 
 	var products []models.Product
 	for rows.Next() {
 		var product models.Product
-		err := rows.Scan(&product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
+		err := rows.Scan(&product.ID, &product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -38,7 +38,7 @@ func GetProduct(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var product models.Product
 
-	err := config.Database.QueryRow("SELECT name, description, cost, coin_type_id, images, active FROM products WHERE id = ?", id).Scan(&product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
+	err := config.Database.QueryRow("SELECT id, name, description, cost, coin_type_id, images, active FROM products WHERE id = ?", id).Scan(&product.ID, &product.Name, &product.Description, &product.Cost, &product.CoinTypeId, &product.Images, &product.Active)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return c.SendStatus(404)

@@ -17,7 +17,7 @@ func ListUserBalances(c *fiber.Ctx) error {
 	defer func(rows *sql.Rows) {
 		err := rows.Close()
 		if err != nil {
-
+			log.Fatal(err)
 		}
 	}(rows)
 

@@ -10,21 +10,21 @@ import (
 )
 
 func ListTransactions(c *fiber.Ctx) error {
-	rows, err := config.Database.Query("SELECT status, transaction_type_id, coin_type_id, amount, user_id_from, user_id_to, product_id FROM transactions")
+	rows, err := config.Database.Query("SELECT id, status, transaction_type_id, coin_type_id, amount, user_id_from, user_id_to, product_id FROM transactions")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer func(rows *sql.Rows) {
 		err := rows.Close()
 		if err != nil {
-
+			log.Fatal(err)
 		}
 	}(rows)
 
 	var transactions []models.Transaction
 	for rows.Next() {
 		var transaction models.Transaction
-		err := rows.Scan(&transaction.Status, &transaction.TransactionTypeId, &transaction.CoinTypeId, &transaction.Amount, &transaction.UserIdFrom, &transaction.UserIdTo, &transaction.ProductId)
+		err := rows.Scan(&transaction.ID, &transaction.Status, &transaction.TransactionTypeId, &transaction.CoinTypeId, &transaction.Amount, &transaction.UserIdFrom, &transaction.UserIdTo, &transaction.ProductId)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -38,7 +38,7 @@ func GetTransaction(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var transaction models.Transaction
 
-	err := config.Database.QueryRow("SELECT status, transaction_type_id, coin_type_id, amount, user_id_from, user_id_to, product_id FROM transactions WHERE id = ?", id).Scan(&transaction.Status, &transaction.TransactionTypeId, &transaction.CoinTypeId, &transaction.Amount, &transaction.UserIdFrom, &transaction.UserIdTo, &transaction.ProductId)
+	err := config.Database.QueryRow("SELECT id, status, transaction_type_id, coin_type_id, amount, user_id_from, user_id_to, product_id FROM transactions WHERE id = ?", id).Scan(&transaction.ID, &transaction.Status, &transaction.TransactionTypeId, &transaction.CoinTypeId, &transaction.Amount, &transaction.UserIdFrom, &transaction.UserIdTo, &transaction.ProductId)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return c.SendStatus(404)

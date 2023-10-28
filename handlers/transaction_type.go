@@ -10,21 +10,21 @@ import (
 )
 
 func ListTransactionTypes(c *fiber.Ctx) error {
-	rows, err := config.Database.Query("SELECT name FROM transaction_types")
+	rows, err := config.Database.Query("SELECT id, name FROM transaction_types")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer func(rows *sql.Rows) {
 		err := rows.Close()
 		if err != nil {
-
+			log.Fatal(err)
 		}
 	}(rows)
 
 	var transactionTypes []models.TransactionType
 	for rows.Next() {
 		var transactionType models.TransactionType
-		err := rows.Scan(&transactionType.Name)
+		err := rows.Scan(&transactionType.ID, &transactionType.Name)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -38,7 +38,7 @@ func GetTransactionType(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var transactionType models.TransactionType
 
-	err := config.Database.QueryRow("SELECT name FROM transaction_types WHERE id = ?", id).Scan(&transactionType.Name)
+	err := config.Database.QueryRow("SELECT id, name FROM transaction_types WHERE id = ?", id).Scan(&transactionType.ID, &transactionType.Name)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return c.SendStatus(404)
