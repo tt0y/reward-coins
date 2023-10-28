@@ -1,8 +1,6 @@
 package models
 
-import "gorm.io/gorm"
-
 type TransactionType struct {
-	gorm.Model
+	ID   uint   `json:"id"`
 	Name string `json:"name"`
 }

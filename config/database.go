@@ -1,16 +1,16 @@
 package config
 
 import (
+	"database/sql"
 	"fmt"
-	"github.com/joho/godotenv"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
 	"log"
 	"os"
-	"reward-coins-api/models"
+
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/joho/godotenv"
 )
 
-var Database *gorm.DB
+var Database *sql.DB
 
 func getDataSource() string {
 	dbName := goDotEnvVariable("MYSQL_DATABASE")
@@ -23,24 +23,40 @@ func getDataSource() string {
 
 	return fmt.Sprintf("%s:%s@tcp(127.0.0.1:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local", user, password, dbName)
 }
+
 func Connect() error {
 	var err error
 
-	Database, err = gorm.Open(mysql.Open(getDataSource()), &gorm.Config{
-		SkipDefaultTransaction: true,
-		PrepareStmt:            true,
-	})
+	Database, err = sql.Open("mysql", getDataSource())
 
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
-	Database.AutoMigrate(&models.TransactionType{})
+	err = Database.Ping()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	createTables()
 
 	return nil
 }
 
-// use godot package to load/read the .env file and return the value of the key
+func createTables() {
+	_, err := Database.Exec(`CREATE TABLE IF NOT EXISTS transaction_types (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(255),
+		created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+		updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	);`)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func goDotEnvVariable(key string) string {
 	// load .env file
 	err := godotenv.Load(".env")
