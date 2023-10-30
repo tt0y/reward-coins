@@ -15,7 +15,7 @@ func main() {
 
 	app := fiber.New()
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3001", // react app
+		AllowOrigins: "http://localhost:3000", // react app
 		AllowMethods: "GET,POST,PUT,DELETE",
 	}))
 
