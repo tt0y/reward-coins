@@ -17,51 +17,51 @@ func SetupRoutes(app *fiber.App) {
 
 	// transaction-type api
 	app.Get("/api/v1/transaction-type", handlers.ListTransactionTypes)
-	app.Get("/api/v1/transaction-type/:id", handlers.GetTransactionType)
+	app.Get("/api/v1/transaction-type/show/:id", handlers.GetTransactionType)
 	app.Post("/api/v1/transaction-type", handlers.AddTransactionType)
-	app.Put("/api/v1/transaction-type/:id", handlers.UpdateTransactionType)
+	app.Put("/api/v1/transaction-type/edit/:id", handlers.UpdateTransactionType)
 	app.Delete("/api/v1/transaction-type/:id", handlers.RemoveTransactionType)
 
 	// coin-type api
 	app.Get("/api/v1/coin-type", handlers.ListCoinTypes)
-	app.Get("/api/v1/coin-type/:id", handlers.GetCoinType)
+	app.Get("/api/v1/coin-type/show/:id", handlers.GetCoinType)
 	app.Post("/api/v1/coin-type", handlers.AddCoinType)
-	app.Put("/api/v1/coin-type/:id", handlers.UpdateCoinType)
+	app.Put("/api/v1/coin-type/edit/:id", handlers.UpdateCoinType)
 	app.Delete("/api/v1/coin-type/:id", handlers.RemoveCoinType)
 
 	// exchange-rate api
 	app.Get("/api/v1/exchange-rate", handlers.ListExchangeRates)
-	app.Get("/api/v1/exchange-rate/:id", handlers.GetExchangeRate)
+	app.Get("/api/v1/exchange-rate/show/:id", handlers.GetExchangeRate)
 	app.Post("/api/v1/exchange-rate", handlers.AddExchangeRate)
-	app.Put("/api/v1/exchange-rate/:id", handlers.UpdateExchangeRate)
+	app.Put("/api/v1/exchange-rate/edit/:id", handlers.UpdateExchangeRate)
 	app.Delete("/api/v1/exchange-rate/:id", handlers.RemoveExchangeRate)
 
 	// user api
 	app.Get("/api/v1/user", handlers.ListUsers)
-	app.Get("/api/v1/user/:id", handlers.GetUser)
+	app.Get("/api/v1/user/show/:id", handlers.GetUser)
 	app.Post("/api/v1/user", handlers.AddUser)
-	app.Put("/api/v1/user/:id", handlers.UpdateUser)
+	app.Put("/api/v1/user/edit/:id", handlers.UpdateUser)
 	app.Delete("/api/v1/user/:id", handlers.RemoveUser)
 
 	// product api
 	app.Get("/api/v1/product", handlers.ListProducts)
-	app.Get("/api/v1/product/:id", handlers.GetProduct)
+	app.Get("/api/v1/product/show/:id", handlers.GetProduct)
 	app.Post("/api/v1/product", handlers.AddProduct)
-	app.Put("/api/v1/product/:id", handlers.UpdateProduct)
+	app.Put("/api/v1/product/edit/:id", handlers.UpdateProduct)
 	app.Delete("/api/v1/product/:id", handlers.RemoveProduct)
 
 	// user balance api
 	app.Get("/api/v1/balance", handlers.ListUserBalances)
-	app.Get("/api/v1/balance/:id", handlers.GetUserBalance)
+	app.Get("/api/v1/balance/show/:id", handlers.GetUserBalance)
 	app.Post("/api/v1/balance", handlers.AddUserBalance)
-	app.Put("/api/v1/balance/:id", handlers.UpdateUserBalance)
+	app.Put("/api/v1/balance/edit/:id", handlers.UpdateUserBalance)
 	app.Delete("/api/v1/balance/:id", handlers.RemoveUserBalance)
 
 	// transaction api
 	app.Get("/api/v1/transaction", handlers.ListTransactions)
-	app.Get("/api/v1/transaction/:id", handlers.GetTransaction)
+	app.Get("/api/v1/transaction/show/:id", handlers.GetTransaction)
 	app.Post("/api/v1/transaction", handlers.AddTransaction)
-	app.Put("/api/v1/transaction/:id", handlers.UpdateTransaction)
+	app.Put("/api/v1/transaction/edit/:id", handlers.UpdateTransaction)
 	app.Delete("/api/v1/transaction/:id", handlers.RemoveTransaction)
 
 }
