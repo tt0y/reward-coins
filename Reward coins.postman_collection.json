@@ -84,7 +84,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/user/1",
+							"raw": "{{reward_coin_url}}/api/v1/user/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -92,6 +92,7 @@
 								"api",
 								"v1",
 								"user",
+								"show",
 								"1"
 							]
 						}
@@ -132,7 +133,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/user/1",
+							"raw": "{{reward_coin_url}}/api/v1/user/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -140,6 +141,7 @@
 								"api",
 								"v1",
 								"user",
+								"edit",
 								"1"
 							]
 						}
@@ -178,7 +180,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"user_id\": 1, \"coin_type_id\": 1, \"amount\": 100}",
+							"raw": "{\n  \"user_id\": 1,\n  \"coin_type_id\": 1,\n  \"amount\": 100\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -205,7 +207,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/balance/1",
+							"raw": "{{reward_coin_url}}/api/v1/balance/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -213,6 +215,7 @@
 								"api",
 								"v1",
 								"balance",
+								"show",
 								"1"
 							]
 						}
@@ -253,7 +256,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/balance/1",
+							"raw": "{{reward_coin_url}}/api/v1/balance/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -261,6 +264,7 @@
 								"api",
 								"v1",
 								"balance",
+								"edit",
 								"1"
 							]
 						}
@@ -322,6 +326,9 @@
 				},
 				{
 					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -334,6 +341,7 @@
 								"api",
 								"v1",
 								"coin-type",
+								"show",
 								"1"
 							]
 						}
@@ -374,7 +382,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/coin-type/1",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -382,6 +390,7 @@
 								"api",
 								"v1",
 								"coin-type",
+								"edit",
 								"1"
 							]
 						}
@@ -447,7 +456,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/transaction-type/1",
+							"raw": "{{reward_coin_url}}/api/v1/transaction-type/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -455,6 +464,7 @@
 								"api",
 								"v1",
 								"transaction-type",
+								"show",
 								"1"
 							]
 						}
@@ -541,7 +551,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"status\": \"new\", \"transaction_type_id\": 1, \"coin_type_id\": 1, \"amount\": 10, \"user_id_from\": 1, \"product_id\": 1}",
+							"raw": "{\n  \"status\": \"new\",\n  \"transaction_type_id\": 1,\n  \"coin_type_id\": 1,\n  \"amount\": 10,\n  \"user_id_from\": 1,\n  \"product_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -568,7 +578,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -576,6 +586,7 @@
 								"api",
 								"v1",
 								"transaction",
+								"show",
 								"1"
 							]
 						}
@@ -616,7 +627,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -624,6 +635,7 @@
 								"api",
 								"v1",
 								"transaction",
+								"edit",
 								"1"
 							]
 						}
@@ -689,7 +701,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -697,6 +709,7 @@
 								"api",
 								"v1",
 								"exchange-rate",
+								"show",
 								"1"
 							]
 						}
@@ -737,7 +750,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -745,6 +758,7 @@
 								"api",
 								"v1",
 								"exchange-rate",
+								"edit",
 								"1"
 							]
 						}
@@ -783,7 +797,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Рюкзак Freedom Pay\", \"description\": \"Практичный городоской рюкзак\", \"cost\": 100, \"coin_type_id\": 1, \"images\": \"{\\\"img1\\\":\\\"cdn://img1.png\\\"}\", \"active\": false}",
+							"raw": "{\n  \"name\": \"Рюкзак FP\",\n  \"description\": \"Практичный городоской рюкзак\",\n  \"cost\": 100,\n  \"coin_type_id\": 1,\n  \"images\": \"{\\\"img1\\\":\\\"cdn://img1.png\\\"}\",\n  \"active\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -810,7 +824,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/product/1",
+							"raw": "{{reward_coin_url}}/api/v1/product/show/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -818,6 +832,7 @@
 								"api",
 								"v1",
 								"product",
+								"show",
 								"1"
 							]
 						}
@@ -858,7 +873,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/product/1",
+							"raw": "{{reward_coin_url}}/api/v1/product/edit/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -866,6 +881,7 @@
 								"api",
 								"v1",
 								"product",
+								"edit",
 								"1"
 							]
 						}
