@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c6cfa06b-7933-4c45-a5d3-b985f6ca3fb7",
+		"_postman_id": "fcbca300-b50e-4bf2-a160-b2445fcacf8d",
 		"name": "Reward coins",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21014024"
@@ -84,7 +84,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/user/show/1",
+							"raw": "{{reward_coin_url}}/api/v1/user/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -92,7 +92,6 @@
 								"api",
 								"v1",
 								"user",
-								"show",
 								"1"
 							]
 						}
@@ -121,7 +120,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -133,7 +132,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/user/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/user/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -141,7 +140,6 @@
 								"api",
 								"v1",
 								"user",
-								"edit",
 								"1"
 							]
 						}
@@ -207,7 +205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/balance/show/1",
+							"raw": "{{reward_coin_url}}/api/v1/balance/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -215,7 +213,6 @@
 								"api",
 								"v1",
 								"balance",
-								"show",
 								"1"
 							]
 						}
@@ -244,7 +241,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -256,7 +253,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/balance/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/balance/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -264,7 +261,6 @@
 								"api",
 								"v1",
 								"balance",
-								"edit",
 								"1"
 							]
 						}
@@ -326,9 +322,6 @@
 				},
 				{
 					"name": "get",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -341,7 +334,6 @@
 								"api",
 								"v1",
 								"coin-type",
-								"show",
 								"1"
 							]
 						}
@@ -370,7 +362,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -382,7 +374,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/coin-type/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/coin-type/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -390,7 +382,6 @@
 								"api",
 								"v1",
 								"coin-type",
-								"edit",
 								"1"
 							]
 						}
@@ -493,7 +484,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -578,7 +569,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/transaction/show/1",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -586,7 +577,6 @@
 								"api",
 								"v1",
 								"transaction",
-								"show",
 								"1"
 							]
 						}
@@ -615,7 +605,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -627,7 +617,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/transaction/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/transaction/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -635,7 +625,6 @@
 								"api",
 								"v1",
 								"transaction",
-								"edit",
 								"1"
 							]
 						}
@@ -701,7 +690,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/show/1",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -709,7 +698,6 @@
 								"api",
 								"v1",
 								"exchange-rate",
-								"show",
 								"1"
 							]
 						}
@@ -738,7 +726,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -750,7 +738,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/exchange-rate/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -758,7 +746,6 @@
 								"api",
 								"v1",
 								"exchange-rate",
-								"edit",
 								"1"
 							]
 						}
@@ -824,7 +811,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/product/show/1",
+							"raw": "{{reward_coin_url}}/api/v1/product/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -832,7 +819,6 @@
 								"api",
 								"v1",
 								"product",
-								"show",
 								"1"
 							]
 						}
@@ -861,7 +847,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -873,7 +859,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{reward_coin_url}}/api/v1/product/edit/1",
+							"raw": "{{reward_coin_url}}/api/v1/product/1",
 							"host": [
 								"{{reward_coin_url}}"
 							],
@@ -881,7 +867,6 @@
 								"api",
 								"v1",
 								"product",
-								"edit",
 								"1"
 							]
 						}
