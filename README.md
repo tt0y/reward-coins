@@ -9,3 +9,5 @@ goose mysql "${RC_USERNAME}:${RC_PASSWORD}@/${RC_DATABASE}?parseTime=true" statu
 # run all migrations
 goose mysql "${RC_USERNAME}:${RC_PASSWORD}@/${RC_DATABASE}?parseTime=true" up
 
+# more info about goose
+https://github.com/pressly/goose
