@@ -1,13 +1,19 @@
 package handlers
 
 import (
+	"crypto/md5"
 	"database/sql"
+	"encoding/hex"
 	"errors"
 	"github.com/gofiber/fiber/v2"
 	"log"
+	"math/rand"
 	"reward-coins-api/config"
 	"reward-coins-api/models"
+	"time"
 )
+
+const saltLength = 8
 
 func ListUsers(c *fiber.Ctx) error {
 	rows, err := config.Database.Query("SELECT id, name, email, phone, password, is_admin FROM users")
@@ -56,11 +62,16 @@ func AddUser(c *fiber.Ctx) error {
 		return c.Status(503).SendString(err.Error())
 	}
 
-	_, err := config.Database.Exec("INSERT INTO users (name, email, phone, password, is_admin) VALUES (?, ?, ?, ?, ?)",
-		user.Name, user.Email, user.Phone, user.Password, user.IsAdmin)
+	salt := generateSalt(saltLength)
+	hashedPassword := hashPasswordWithSalt(user.Password, salt)
+
+	_, err := config.Database.Exec("INSERT INTO users (name, email, phone, password, salt, is_admin) VALUES (?, ?, ?, ?, ?, ?)",
+		user.Name, user.Email, user.Phone, hashedPassword, salt, user.IsAdmin)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	user.Password = ""
 
 	return c.Status(201).JSON(user)
 }
@@ -91,4 +102,21 @@ func RemoveUser(c *fiber.Ctx) error {
 	}
 
 	return c.SendStatus(200)
+}
+
+// Генерация соли случайным образом
+func generateSalt(length int) string {
+	rand.Seed(time.Now().UnixNano())
+	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	b := make([]byte, length)
+	for i := range b {
+		b[i] = charset[rand.Intn(len(charset))]
+	}
+	return string(b)
+}
+
+// Хеширование пароля с использованием MD5 и соли
+func hashPasswordWithSalt(password, salt string) string {
+	hash := md5.Sum([]byte(password + salt))
+	return hex.EncodeToString(hash[:])
 }

@@ -7,6 +7,7 @@ CREATE TABLE users
     email        varchar(255),
     phone        varchar(30),
     password     varchar(60),
+    salt         varchar(8),
     is_admin     boolean,
     activated_at timestamp,
     blocked_at   timestamp,
